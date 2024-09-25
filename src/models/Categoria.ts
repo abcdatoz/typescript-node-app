@@ -15,7 +15,7 @@ import Producto from "./Producto"
 
 
 @Table({tableName: 'categorias'})
-class Categoria extends Model<Categoria>{
+class Categoria extends Model{
 
     @PrimaryKey
     @AutoIncrement

@@ -15,7 +15,7 @@ interface ProductoData {
 export const list = async(req: Request, res: Response): Promise<Response> => {
 
     const productos = await ListProductosService()
-
+    
     return res.status(200).json(productos)
 
 }

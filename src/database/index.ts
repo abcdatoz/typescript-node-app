@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize-typescript"
 
-
+import Usuario from "../models/User"
 import Categoria from "../models/Categoria"
 import Producto from "../models/Producto"
 
@@ -10,6 +10,7 @@ const dbConfig = require("../config/database")
 const sequelize = new Sequelize(dbConfig)
 
 const models = [
+    Usuario,
     Categoria,
     Producto
 ]

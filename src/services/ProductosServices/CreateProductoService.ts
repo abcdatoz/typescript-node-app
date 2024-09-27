@@ -26,4 +26,4 @@ const CreateProductoService = async (data: Request): Promise<Producto> => {
     return producto
 }
 
-export default CreateProductoService
+export default CreateProductoService 

@@ -42,7 +42,7 @@ class Categoria extends Model{
     @Column(DataType.DATE)
     updatedAt!: Date;
 
-    @HasMany(() => Producto)
+    @HasMany(() => Producto, {foreignKey: 'categoriaId', onDelete:'RESTRICT'})
     productos!: Producto[];
 }
 

@@ -5,13 +5,14 @@ interface Request {
     clave: string;
     nombre: string ;
     precio: number;
-    categoriaId: number
+    categoriaId: number;
+    imagen: string;
 }
 
 
 const CreateProductoService = async (data: Request): Promise<Producto> => {
 
-    const {clave, nombre, precio, categoriaId} = data
+    const {clave, nombre, precio, categoriaId, imagen} = data
 
     if (clave == undefined || nombre == undefined || precio == undefined || categoriaId == undefined
         || precio == 0 
@@ -20,7 +21,7 @@ const CreateProductoService = async (data: Request): Promise<Producto> => {
 
 
     const producto = await Producto.create ({
-        clave, nombre, precio, categoriaId
+        clave, nombre, precio, categoriaId, imagen
     })
 
     return producto

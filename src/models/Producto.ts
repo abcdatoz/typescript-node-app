@@ -35,6 +35,10 @@ import {
     @Column(DataType.DECIMAL) 
     precio!: number;
 
+    @AllowNull(false)
+    @Column(DataType.STRING)
+    imagen!: string;
+
     @Default(1)
     @Column(DataType.INTEGER)
     status!: number

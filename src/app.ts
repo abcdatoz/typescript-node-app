@@ -6,10 +6,9 @@ import cookieParser from "cookie-parser"
 import bodyParser from "body-parser"
 
 import "./database"
-import uploadConfig from "./config/upload"
 import AppError from "./errors/AppError"
 import routes from './routes'
-
+import path from "path"
 
 
 const app = express()
@@ -21,10 +20,12 @@ app.use(
     })
 )
 
+const publicFolder = path.resolve(__dirname, "..", "public")
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use("/public", express.static(uploadConfig.directory))
+app.use("/public", express.static(publicFolder))
 
 app.get('/',(req,res)=>{ res.json({messsage:'Opuz'}) })
 

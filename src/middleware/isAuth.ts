@@ -12,6 +12,8 @@ interface TokenPayload {
     iat: number;
     expt: number;
 }
+ 
+ 
 
 const isAuth = (req: Request, res: Response, next: NextFunction): void => {
     const authHeader = req.headers.authorization;
@@ -28,12 +30,14 @@ const isAuth = (req: Request, res: Response, next: NextFunction): void => {
 
     try{    
 
-        const decoded = verify(token, AuthConfig.secret)
+        
+        const decoded = verify(token, AuthConfig.secret) 
         const {id, profile} = decoded as TokenPayload
 
         req.user = {id, profile }
 
     }catch(err){
+        console.log(err)
         throw new AppError("Token Invalido, trataremos de asignarle uno nuevo en la siguiente petición",403)
     }
 

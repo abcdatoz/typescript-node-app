@@ -7,7 +7,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "start": "nodemon -r ts-node/register src/server.ts",
-    "dev:server": "ts-node-dev --respawn --transpile-only --ignore node_modules src/server.ts"
+    "dev:server": "ts-node-dev --respawn --transpile-only --ignore node_modules src/server.ts",
+    "howtorun": "npx ts-node --files ./usebackslashinstead/src/usebackslashinstead/server.ts  "
   },
   "keywords": [],
   "author": "",

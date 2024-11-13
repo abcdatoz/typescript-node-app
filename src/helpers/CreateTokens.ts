@@ -1,18 +1,19 @@
 import { sign } from 'jsonwebtoken'
 import authConfig from '../config/auth'
 import Usuario from '../models/User'
-import { profile } from 'console'
+import { profile, } from 'console'
 
 export const createAccessToken = (usuario: Usuario): string => {
 
-    const { secret, expiresIn} = authConfig
+    const { secret, expiresIn } = authConfig
 
     return sign(
         {username: usuario.nombre, profile: usuario.profile, id: usuario.id},
         secret,
-        {expiresIn}
+        {expiresIn}        
     )
 }
+
 
 export const createRefreshToken = (usuario:Usuario): string => {
 
